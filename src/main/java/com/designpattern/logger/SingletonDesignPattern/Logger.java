@@ -1,7 +1,7 @@
 package com.designpattern.logger.SingletonDesignPattern;
 
 public class Logger {
-	private static Logger loggerInstance = null;
+	private static volatile Logger loggerInstance = null;
 	private static int instanceCount=0;
 	
 	private Logger() {

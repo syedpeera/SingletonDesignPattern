@@ -1,5 +1,8 @@
 package com.designpattern.logger.SingletonDesignPattern;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.ExecutorService;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -37,6 +40,11 @@ public class SingletonDesignPatternApplication {
 		
 		int instanceCount = Logger.getLoggerInstanceCount();
 		System.out.println("Total Instances: "+instanceCount);
+		
+		/*
+		ExecutorService executor = Executors.newFixedThreadPool(2);
+		executor.execute(()->Logger.getLoggerInstance());
+		executor.execute(()->Logger.getLoggerInstance());
+		*/
 	}
-
 }
